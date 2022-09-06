@@ -76,37 +76,58 @@
 
 
             <!-- Blank Start -->
-
             <div class="container-fluid pt-4 px-4">
                 <div class="row">
                     <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Reklam Ekle</h6>
-                            <form id="form" enctype="multipart/form-data">
-                                <div class="row mb-3">
-                                    <label for="reklam" class="col-sm-2 col-form-label">Reklam</label>
-                                    <div class="col-sm-10">
-                                        <div class="mb-3">
-                                            <input class="form-control bg-dark" type="file" id="reklam">
+                            <div class="row mb-4">
+                                <div class="col-sm-6 col-xl-6">
+                                    <h6 class="mb-4">Firma Bilgileri</h6>
+                                </div>
+                                <div class="col-sm-6 col-xl-6">
+                                    <h6 class="mb-4">Reklam Bilgileri</h6>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row mb-4">
+                                    <div class="col-sm-6 col-xl-6">
+                                        <div class="row mb-4">
+                                            <label for="firmaAd" class="col-sm-3 col-form-label">Firma Ad:</label>
+                                            <div class="col-sm-9">
+                                                <h6 id="firmaAd" class="mb-4 topMargin"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <label for="il" class="col-sm-3 col-form-label">İl:</label>
+                                            <div class="col-sm-9">
+                                                <h6 class="mb-4 topMargin" id="il"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <label for="ilce" class="col-sm-3 col-form-label">İlçe:</label>
+                                            <div class="col-sm-9">
+                                                <h6 class="mb-4 topMargin" id="ilce"></h6>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Firma Seç</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-select mb-3" id="selectBoxFirma">
-                                            <option value="deneme">Firma Seçiniz</option>
-                                        </select>
+                                    <div class="col-sm-6 col-xl-6">
+                                        <div class="row mb-4">
+                                            <label for="reklamId" class="col-sm-2 col-form-label">Reklam Id : </label>
+                                            <div class="col-sm-10">
+                                                <h6 class="mb-4 topMargin" id="reklamId"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <label for="indirmeLink" class="col-sm-2 col-form-label">İndirme Link : </label>
+                                            <div class="col-sm-10">
+                                                <h6 class="mb-4 topMargin" id="indirmeLink"></h6>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded h-100 p-4">
-                    <button class="btn btn-success w-100 m-2" onclick="postReklam()" type="button">Kaydet</button>
                 </div>
             </div>
             <!-- Blank End -->
