@@ -18,7 +18,6 @@ fetch('http://localhost:8080/reklam/findAll').then(response => response.json())
     fetch("http://localhost:8080/firma/findAll")
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       var select  = document.getElementById("selectBoxFirma");
       for (var i = 0; result.length > i; i++) {
         var opt = document.createElement('option');
@@ -67,7 +66,6 @@ fetch('http://localhost:8080/reklam/findById/'+url,
   "Access-Control-Allow-Origin": "*",
 }).then(response => response.json())
     .then(result => {
-      console.log(result);
         document.getElementById("firmaAd").innerHTML=result.firma.firmaAd;
         document.getElementById("il").innerHTML=result.firma.adres.il;
         document.getElementById("ilce").innerHTML=result.firma.adres.ilce;

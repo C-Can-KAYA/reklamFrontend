@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <script src="js/minibusEkle.js"></script>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner"
@@ -72,180 +73,108 @@
                     </div>
             </nav>
             <!-- Navbar End -->
-
-
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
-            </div>
-            <div class="container-fluid pt-4 px-4">
                 <div class="row">
-                    <div class="col-sm-5 col-xl-5">
+                    <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Minibüs Ekle</h6>
                             <form>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Şoför</label>
+                                    <label for="sofor" class="col-sm-2 col-form-label">Şoför</label>
                                     <div class="col-sm-10">
-                                        <select class="form-select mb-3" aria-label="Default select example">
+                                        <select class="form-select mb-3" id="sofor" aria-label="Default select example">
                                             <option selected="">Şoför Seçiniz</option>
-                                            <option value="1">Ali Yılmaz</option>
-                                            <option value="2">Mehmet Demir</option>
-                                            <option value="3">Ahmet Kaya</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">İl</label>
+                                    <label for="il" class="col-sm-2 col-form-label">İl</label>
                                     <div class="col-sm-10">
-                                        <select class="form-select mb-3" aria-label="Default select example">
+                                        <select class="form-select mb-3" id="il" aria-label="Default select example"
+                                            onBlur="hatList()">
                                             <option selected="">İl Seçiniz</option>
-                                            <option value="1">İstanbul</option>
-                                            <option value="2">Ankara</option>
-                                            <option value="3">Antalya</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Hat</label>
+                                    <label for="hat" class="col-sm-2 col-form-label">Hat</label>
                                     <div class="col-sm-10">
-                                        <select class="form-select mb-3" aria-label="Default select example">
+                                        <select class="form-select mb-3" id="hat" aria-label="Default select example">
                                             <option selected="">Hat Seçiniz</option>
-                                            <option value="1">Kadıköy - Kartal</option>
-                                            <option value="2">Gebze - Harem</option>
-                                            <option value="3">Üsküdar - Maltepe</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Reklam : </label>
-                                    <div class="row mb-4">
-                                        <select class="form-select" multiple aria-label="multiple select example" style="height: 42vh;">
-                                          <option value="0" selected="">Hiçbiri</option>
-                                          <option value="1">Trendyol 10.12.2023</option>
-                                          <option value="2">Medipol 11.11.2023</option>
-                                        </select>
-                                      </div>
+                                    <label for="reklam" class="col-sm-2 col-form-label">Reklam</label>
+                                    <select class="form-select" id="reklam" multiple=""
+                                        aria-label="multiple select example" style="height: 42vh;">
+                                        <option selected="">Reklam Seçiniz</option>
+                                    </select>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Marka</label>
+                                    <label for="marka" class="col-sm-2 col-form-label">Marka</label>
                                     <div class="col-sm-10">
-                                        <input type="marka" class="form-control" id="inputMarka">
+                                        <input type="marka" class="form-control" id="marka">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Model</label>
+                                    <label for="model" class="col-sm-2 col-form-label">Model</label>
                                     <div class="col-sm-10">
-                                        <input type="marka" class="form-control" id="inputMarka">
+                                        <input type="model" class="form-control" id="model">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputMarka" class="col-sm-2 col-form-label">Plaka</label>
+                                    <label for="plaka" class="col-sm-2 col-form-label">Plaka</label>
                                     <div class="col-sm-10">
-                                        <input type="marka" class="form-control" id="inputMarka">
+                                        <input type="plaka" class="form-control" id="plaka">
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                    <div class="col-sm-7 col-xl-7">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <div class="row mb-4">
-                                <div class="col-sm-6 col-xl-6">
-                                    <h6 class="mb-4">Şoför Bilgileri</h6>
-                                </div>
-                                <div class="col-sm-6 col-xl-6">
-                                        <h6 class="mb-4">Firma Bilgileri</h6>
-                                    </div>
                             </div>
-                            <form>
-                                <div class="row mb-4">
-                                    <div class="col-sm-6 col-xl-6">
-                                        <div class="row mb-4">
-                                            <label for="inputMarka" class="col-sm-3 col-form-label">T.C:</label>
-                                            <div class="col-sm-9">
-                                                <h6 class="mb-4 topMargin">113******08</h6>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4">
-                                            <label for="inputMarka" class="col-sm-3 col-form-label">Ad Soyad:</label>
-                                            <div class="col-sm-9">
-                                                <h6 class="mb-4 topMargin">Ahmet KAYA</h6>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4">
-                                            <label for="inputMarka" class="col-sm-3 col-form-label">Telefon:</label>
-                                            <div class="col-sm-9">
-                                                <h6 class="mb-4 topMargin">0(542) 254 55 35</h6>
-                                            </div>
-                                        </div>
-                                        <h6 class="mb-4">Reklam Bilgileri</h6>
-                                        <div class="row mb-3">
-                                            <label for="inputMarka" class="col-sm-3 col-form-label">Reklam Ad:</label>
-                                            <div class="col-sm-9">
-                                                <h6 class="mb-4 topMargin">Trendyol 10.12.2023</h6>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4">
-                                            <label for="inputMarka" class="col-sm-3 col-form-label">Reklam Link:</label>
-                                            <div class="col-sm-8">
-                                                <h6 class="mb-4 topMargin">https://www.google.com.tr/</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-xl-6">
-                                        <div class="row mb-4">
-                                            <label for="inputMarka" class="col-sm-2 col-form-label">Firma Ad : </label>
-                                            <div class="col-sm-10">
-                                                <h6 class="mb-4 topMargin">Trendyol A.Ş</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded h-100 p-4">
-                    <button class="btn btn-success w-100 m-2" type="button">Kaydet</button>
+                <div class="container-fluid pt-4 px-4">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <button class="btn btn-success w-100 m-2" onclick="postMinibus()" type="button">Kaydet</button>
+                    </div>
                 </div>
-            </div>
-            <!-- Blank End -->
+                <!-- Blank End -->
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-12 text-center text-sm-end">
-                            &copy; <a href="#">Lost Software</a>, All Right Reserved.
+                <!-- Footer Start -->
+                <div class="container-fluid pt-4 px-4">
+                    <div class="bg-secondary rounded-top p-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 text-center text-sm-end">
+                                &copy; <a href="#">Lost Software</a>, All Right Reserved.
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Footer End -->
             </div>
-            <!-- Footer End -->
+            <!-- Content End -->
+
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
-        <!-- Content End -->
 
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/chart/chart.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
 </body>
 
 </html>

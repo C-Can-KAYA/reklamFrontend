@@ -1,0 +1,13 @@
+        const reklamItem = {
+          link: result.link,
+          ad: result.ad,
+          firma: {
+            firmaAd: result.firma.firmaAd,
+            sicilNo: result.firma.sicilNo,
+            adres: {
+              il: result.firma.adres.il,
+              ilce: result.firma.adres.ilce,
+              postaKodu: result.firma.adres.postaKodu,
+            },
+          },
+        };
