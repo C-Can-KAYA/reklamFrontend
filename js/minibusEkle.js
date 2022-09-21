@@ -67,14 +67,14 @@ function postMinibus() {
     marka: marka,
     model: model,
     plaka: plaka,
-    reklam: {},
-    sofor: {},
+    reklam: [],
+    sofor: [],
   }
   reklamList.forEach((reklamekle) => {
     fetch("http://localhost:8080/reklam/findById/" + reklamekle)
       .then((response) => response.json())
       .then((result) => {
-       minibusItem.reklam.push( {
+       minibusItem.reklam.push(...minibusItem.reklam, {
             link: result.link,
             ad: result.ad,
             firma: {
@@ -88,6 +88,7 @@ function postMinibus() {
             },
           } );
       });
+      console.log(minibusItem)
   });
   fetch("http://localhost:8080/sofor/findById/" + soforSelect, {
     method: "POST",
@@ -95,7 +96,13 @@ function postMinibus() {
   })
     .then((response) => response.json())
     .then((result) => {
-        minibusItem.reklam.push(result);
+        minibusItem.sofor.push(...minibusItem.sofor,{
+          soforId: result.soforId,
+          ad: result.ad,
+          soyad: result.soyad,
+          tckn: result.tckn,
+          tel: result.tel
+        });
     });
     console.log(minibusItem);
     console.log(JSON.stringify(minibusItem));

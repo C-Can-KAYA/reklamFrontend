@@ -12,7 +12,7 @@ fetch('http://localhost:8080/sofor/findAll').then(response => response.json())
           cell2.innerHTML = result[i].ad;
           cell3.innerHTML = result[i].soyad;
           cell4.innerHTML = result[i].tel;
-          cell5.innerHTML = "<a class='btn btn-sm btn-info' href='minibusDetayDuzenle.html?id='#'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteMinibus("+result[i].soforId+")' href='#'>Sil</a>";
+          cell5.innerHTML = "<a class='btn btn-sm btn-info' href='soforDuzenle.html?id="+result[i].soforId+"'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteMinibus("+result[i].soforId+")' href='#'>Sil</a>";
         } 
     }
     );

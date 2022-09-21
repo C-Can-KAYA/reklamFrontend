@@ -3,6 +3,7 @@ fetch('http://localhost:8080/minibus/findAll').then(response => response.json())
       console.log(result);
         var table = document.getElementById("minibus");
         for (var i = 0; result.length > i; i++) {
+          console.log(result[i].hat)
           var row = table.insertRow(1);
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);

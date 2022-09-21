@@ -10,10 +10,12 @@ function postSofor() {
         tckn: tckn,
         tel: telefon
     };
+    console.log(soforItem);
     fetch("http://localhost:8080/sofor/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(soforItem),
     }).then((response) => {

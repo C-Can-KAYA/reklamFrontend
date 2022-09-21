@@ -7,8 +7,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -25,10 +26,11 @@
 </head>
 
 <body>
-    <script src="js/sofor.js"></script>
+    <script src="js/firma.js"></script>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Yükleniyor...</span>
             </div>
@@ -44,9 +46,9 @@
                 </a>
                 <div class="navbar-nav w-100">
                     <a href="minibus.html" class="nav-item nav-link"><i class="fa fa-bus me-2"></i>Minibüs</a>
-                    <a href="sofor.html" class="nav-item nav-link active"><i class="fa fa-id-card me-2"></i>Şoför</a>
+                    <a href="sofor.html" class="nav-item nav-link"><i class="fa fa-id-card me-2"></i>Şoför</a>
                     <a href="reklam.html" class="nav-item nav-link"><i class="fa fa-desktop me-2"></i>Reklam</a>
-                    <a href="firma.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Firma</a>
+                    <a href="firma.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Firma</a>
                 </div>
             </nav>
         </div>
@@ -68,35 +70,55 @@
                         <a href="#" class="nav-link">
                             <span class="d-none d-lg-inline-flex">Çıkış</span>
                         </a>
-                </div>
+                    </div>
             </nav>
             <!-- Navbar End -->
 
 
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
-            </div>
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Şoför Listesi</h6>
+                <div class="row">
+                    <div class="col-sm-12 col-xl-12">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <div class="row mb-4">
+                                <div class="col-sm-12 col-xl-12">
+                                    <h6 class="mb-4">Firma Bilgileri</h6>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row mb-4">
+                                    <div class="col-sm-6 col-xl-6">
+                                        <div class="row mb-4">
+                                            <label for="firma" class="col-sm-3 col-form-label">Firma Ad: </label>
+                                            <div class="col-sm-9">
+                                                <h6 id="firma" class="mb-4 topMargin"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <label for="il" class="col-sm-3 col-form-label">İl: </label>
+                                            <div class="col-sm-9">
+                                                <h6 class="mb-4 topMargin" id="il"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <label for="ilce" class="col-sm-3 col-form-label">İlçe: </label>
+                                            <div class="col-sm-9">
+                                                <h6 class="mb-4 topMargin" id="ilce"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-6">
+                                        <div class="row mb-4">
+                                            <label for="sicil" class="col-sm-2 col-form-label">Sicil No: </label>
+                                            <div class="col-sm-10">
+                                                <h6 class="mb-4 topMargin" id="sicil"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0" id="sofor">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Ad</th>
-                                    <th scope="col">Soyad</th>
-                                    <th scope="col">Telefon</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style="
-                    text-align: right;"><a class="btn btn-lg btn-success m-2" href="soforEkle.html">Ekle</a></div>
                 </div>
             </div>
             <!-- Blank End -->
@@ -107,7 +129,7 @@
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-12 text-center text-sm-end">
-                            &copy; <a href="#">Lost Software</a>, All Right Reserved. 
+                            &copy; <a href="#">Lost Software</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>

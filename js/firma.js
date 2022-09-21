@@ -1,3 +1,16 @@
+let url = new URL(window.location.href).searchParams.get("id");
+fetch('http://localhost:8080/firma/findById/'+url,
+{
+  method: "POST",
+  "Access-Control-Allow-Origin": "*",
+}).then(response => response.json())
+    .then(result => {
+      document.getElementById("firma").innerHTML=result.firmaAd;
+      document.getElementById("il").innerHTML=result.adres.il;
+      document.getElementById("ilce").innerHTML=result.adres.ilce;
+      document.getElementById("sicil").innerHTML=result.sicilNo;
+      }
+    );
 fetch("http://localhost:8080/firma/findAll")
   .then((response) => response.json())
   .then((result) => {
@@ -14,7 +27,8 @@ fetch("http://localhost:8080/firma/findAll")
       cell4.innerHTML =
         "<a class='btn btn-sm btn-warning'href='firmaDetay.html?id=" +
         result[i].id +
-        "'>Detay</a><a class='btn btn-sm btn-info' href='firmaDetayDuzenle.html?id='#'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteFirma(" +
+        "'>Detay</a><a class='btn btn-sm btn-info' href='firmaDuzenle.html?id="+
+        result[i].id +"'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteFirma(" +
         result[i].id +
         ")' href='#'>Sil</a>";
     }
