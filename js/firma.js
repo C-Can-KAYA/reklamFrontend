@@ -56,8 +56,8 @@ function postFirma() {
     adres: {
       il: il,
       ilce: ilce,
+      postaKodu: postaKodu,
     },
-    postaKodu: postaKodu,
     sicilNo: sicilNo,
   };
   fetch("http://localhost:8080/firma/insert", {
