@@ -27,7 +27,6 @@ fetch('http://localhost:8080/sofor/findById/'+url,
             tel:telefon
             
         };
-        console.log(soforItem);
         fetch("http://localhost:8080/sofor/updateSofor", {
           method: "PUT",
           headers: {

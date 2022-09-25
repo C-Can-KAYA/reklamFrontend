@@ -1,9 +1,7 @@
 fetch('http://localhost:8080/minibus/findAll').then(response => response.json())
     .then(result => {
-      console.log(result);
         var table = document.getElementById("minibus");
         for (var i = 0; result.length > i; i++) {
-          console.log(result[i].hat)
           var row = table.insertRow(1);
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);
@@ -16,7 +14,7 @@ fetch('http://localhost:8080/minibus/findAll').then(response => response.json())
           cell3.innerHTML = result[i].sofor[0].ad+" "+result[i].sofor[0].soyad;
           cell4.innerHTML = result[i].hat;
           cell5.innerHTML = result[i].sofor[0].tel;
-          cell6.innerHTML = "<a class='btn btn-sm btn-warning'href='minibusDetay.html?id="+result[i].id+"'>Detay</a><a class='btn btn-sm btn-info' href='minibusDetayDuzenle.html?id='#'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteMinibus("+result[i].id+")' href='#'>Sil</a>";
+          cell6.innerHTML = "<a class='btn btn-sm btn-warning'href='minibusDetay.html?id="+result[i].id+"'>Detay</a><a class='btn btn-sm btn-info' href='minibusDetayDuzenle.html?id="+result[i].id+"'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteMinibus("+result[i].id+")' href='#'>Sil</a>";
         }
     }
     );

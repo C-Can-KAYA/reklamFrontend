@@ -75,41 +75,44 @@
                   <div class="row mb-3">
                     <label for="inputMarka" class="col-sm-2 col-form-label">Şoför</label>
                     <div class="col-sm-10">
-                      <select class="form-select mb-3" aria-label="Default select example">
+                      <select class="form-select mb-3" aria-label="Default select example" id="sofor">
                         <option selected="">Şoför Seçiniz</option>
-                        <option value="1">Ali Yılmaz</option>
-                        <option value="2">Mehmet Demir</option>
-                        <option value="3">Ahmet Kaya</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="inputMarka" class="col-sm-2 col-form-label">Hat</label>
+                    <label for="il" class="col-sm-2 col-form-label">İl</label>
                     <div class="col-sm-10">
-                      <select class="form-select mb-3" aria-label="Default select example">
+                        <select class="form-select mb-3" id="il" aria-label="Default select example"
+                            onBlur="hatList()">
+                            <option selected="">İl Seçiniz</option>
+                        </select>
+                    </div>
+                </div>
+                  <div class="row mb-3">
+                    <label for="hat" class="col-sm-2 col-form-label">Hat</label>
+                    <div class="col-sm-10">
+                      <select class="form-select mb-3" aria-label="Default select example" id="hat">
                         <option selected="">Hat Seçiniz</option>
-                        <option value="1">Kadıköy - Kartal</option>
-                        <option value="2">Gebze - Harem</option>
-                        <option value="3">Üsküdar - Maltepe</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="inputMarka" class="col-sm-2 col-form-label">Marka</label>
+                    <label for="marka" class="col-sm-2 col-form-label">Marka</label>
                     <div class="col-sm-10">
-                      <input type="marka" class="form-control" id="inputMarka">
+                      <input type="text" class="form-control" id="marka">
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="inputMarka" class="col-sm-2 col-form-label">Model</label>
+                    <label for="model" class="col-sm-2 col-form-label">Model</label>
                     <div class="col-sm-10">
-                      <input type="marka" class="form-control" id="inputMarka">
+                      <input type="text" class="form-control" id="model">
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="inputMarka" class="col-sm-2 col-form-label">Plaka</label>
+                    <label for="plaka" class="col-sm-2 col-form-label">Plaka</label>
                     <div class="col-sm-10">
-                      <input type="marka" class="form-control" id="inputMarka">
+                      <input type="text" class="form-control" id="plaka">
                     </div>
                   </div>
                 </form>
@@ -120,10 +123,8 @@
                 <form>
                   <h6 class="mb-4">Reklam Listesi</h6>
                   <div class="row mb-4">
-                    <select class="form-select" multiple aria-label="multiple select example" style="height: 42vh;">
-                      <option value="0" selected="">Hiçbiri</option>
-                      <option value="1">Trendyol 10.12.2023</option>
-                      <option value="2">Medipol 11.11.2023</option>
+                    <select class="form-select" multiple aria-label="multiple select example" style="height: 42vh;" id="reklam">
+                      <option value=0 >Hiçbiri</option>
                     </select>
                   </div>
                 </form>
@@ -133,7 +134,7 @@
         </div>
         <div class="container-fluid pt-4 px-4">
           <div class="bg-secondary rounded h-100 p-4">
-            <button class="btn btn-success w-100 m-2" type="button">Değişiklikleri Kaydet</button>
+            <button class="btn btn-success w-100 m-2" onclick="updateMinibus()" type="button">Güncelle</button>
           </div>
         </div>
         <!-- Blank End -->

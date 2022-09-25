@@ -32,7 +32,6 @@ fetch('http://localhost:8080/firma/findById/'+url,
             }
             
         };
-        console.log(firmaItem);
         fetch("http://localhost:8080/firma/updateFirma", {
           method: "POST",
           headers: {

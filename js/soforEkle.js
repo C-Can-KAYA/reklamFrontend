@@ -10,7 +10,6 @@ function postSofor() {
         tckn: tckn,
         tel: telefon
     };
-    console.log(soforItem);
     fetch("http://localhost:8080/sofor/insert", {
       method: "POST",
       headers: {

@@ -55,6 +55,7 @@ fetch("http://localhost:8080/reklam/findAll")
 
 function postMinibus() {
   var hat = document.getElementById("hat").value;
+  var il = document.getElementById("il").value;
   var marka = document.getElementById("marka").value;
   var model = document.getElementById("model").value;
   var plaka = document.getElementById("plaka").value;
@@ -67,49 +68,10 @@ function postMinibus() {
     marka: marka,
     model: model,
     plaka: plaka,
-    reklam: [],
-    sofor: [],
-  }
-  reklamList.forEach((reklamekle) => {
-    fetch("http://localhost:8080/reklam/findById/" + reklamekle)
-      .then((response) => response.json())
-      .then((result) => {
-       minibusItem.reklam.push(...minibusItem.reklam, {
-            link: result.link,
-            ad: result.ad,
-            firma: {
-              firmaAd: result.firma.firmaAd,
-              sicilNo: result.firma.sicilNo,
-              adres: {
-                il: result.firma.adres.il,
-                ilce: result.firma.adres.ilce,
-                postaKodu: result.firma.adres.postaKodu,
-              },
-            },
-          } );
-      });
-      console.log(minibusItem)
-  });
-  fetch("http://localhost:8080/sofor/findById/" + soforSelect, {
-    method: "POST",
-    "Access-Control-Allow-Origin": "*",
-  })
-    .then((response) => response.json())
-    .then((result) => {
-        minibusItem.sofor.push(...minibusItem.sofor,{
-          soforId: result.soforId,
-          ad: result.ad,
-          soyad: result.soyad,
-          tckn: result.tckn,
-          tel: result.tel
-        });
-    });
-    console.log(minibusItem);
-    console.log(JSON.stringify(minibusItem));
- //  kaydet(minibusItem)
-}
-
-function kaydet(minibusItem) {
+    il:il,
+    reklam: reklamList,
+    sofor: soforSelect,
+  };
   fetch("http://localhost:8080/minibus/insert", {
     method: "POST",
     headers: {
