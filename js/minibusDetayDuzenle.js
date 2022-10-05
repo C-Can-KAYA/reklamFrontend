@@ -95,17 +95,10 @@ fetch("http://localhost:8080/minibus/findById/" + url, {
       }
     }
 
-    for (var i = 0, j = hat.options.length; i < j; ++i) {
-      if (hat.options[i].value == hatResult) {
-        hat.selectedIndex = i;
-        break;
-      }
-    }
-
     for (var i = 0, j = reklam.options.length; i < j; ++i) {    
       for (var b = 0, c = result.reklam.length; b < c; b++) {
         if (reklam.options[i].value == result.reklam[b].id) {
-            reklam.querySelectorAll("option")[b+1].selected='selected'
+          reklam.querySelectorAll("option")[result.reklam[b].id].selected='selected'
         }
       }
     }
@@ -117,17 +110,35 @@ fetch("http://localhost:8080/minibus/findById/" + url, {
     var model = document.getElementById("model").value;
     var plaka = document.getElementById("plaka").value;
     var select = document.getElementById("sofor");
+    var selectIl = document.getElementById("il");
     var soforSelect = select.options[select.selectedIndex].value;
     var values = document.getElementById("reklam");
     var reklamList = getSelectValues(values);
+    var il = selectIl.options[selectIl.selectedIndex].text;
     var minibusItem = {
+      il: il,
       hat: hat,
+      id: url,
       marka: marka,
       model: model,
       plaka: plaka,
       reklam: reklamList,
       sofor: soforSelect,
     };
+    fetch("http://localhost:8080/minibus/update", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(minibusItem),
+    }).then((response) => {
+      if (response.ok) {
+        window.alert("işleminiz başarıyla gerçekleşti");
+      } else {
+        window.alert("işleminizi gerçekleştiremiyoruz");
+      }
+      return response.json;
+    });
   }
 
   function getSelectValues(select) {
