@@ -125,6 +125,7 @@ fetch("http://localhost:8080/minibus/findById/" + url, {
       reklam: reklamList,
       sofor: soforSelect,
     };
+    console.log(minibusItem)
     fetch("http://localhost:8080/minibus/update", {
       method: "POST",
       headers: {
