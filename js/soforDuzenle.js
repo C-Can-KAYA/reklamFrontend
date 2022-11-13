@@ -1,5 +1,5 @@
 let url = new URL(window.location.href).searchParams.get("id");
-fetch('http://localhost:8080/sofor/findById/'+url,
+fetch('https://reklamcilik.herokuapp.com/sofor/findById/'+url,
 {
   method: "POST",
   "Access-Control-Allow-Origin": "*",
@@ -27,7 +27,7 @@ fetch('http://localhost:8080/sofor/findById/'+url,
             tel:telefon
             
         };
-        fetch("http://localhost:8080/sofor/updateSofor", {
+        fetch("https://reklamcilik.herokuapp.com/sofor/updateSofor", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

@@ -1,4 +1,4 @@
-fetch("http://localhost:8080/reklam/findAll")
+fetch("https://reklamcilik.herokuapp.com/reklam/findAll")
   .then((response) => response.json())
   .then((result) => {
     var table = document.getElementById("reklam");
@@ -20,7 +20,7 @@ fetch("http://localhost:8080/reklam/findAll")
     }
   });
 
-fetch("http://localhost:8080/firma/findAll")
+fetch("https://reklamcilik.herokuapp.com/firma/findAll")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("selectBoxFirma");
@@ -33,7 +33,7 @@ fetch("http://localhost:8080/firma/findAll")
   });
 
 function deleteReklam(id) {
-  fetch("http://localhost:8080/reklam/deleteById/" + id, {
+  fetch("https://reklamcilik.herokuapp.com/reklam/deleteById/" + id, {
     method: "POST",
   })
     .then(() => {
@@ -49,7 +49,7 @@ function postReklam() {
   let formData = new FormData();
   formData.append("multipartFile", multipartFile);
 
-  fetch("http://localhost:8080/reklam/insert/" + firma, {
+  fetch("https://reklamcilik.herokuapp.com/reklam/insert/" + firma, {
     method: "POST",
     body: formData,
   }).then((response) => {
@@ -63,7 +63,7 @@ function postReklam() {
 }
 
 let url = new URL(window.location.href).searchParams.get("id");
-fetch("http://localhost:8080/reklam/findById/" + url, {
+fetch("https://reklamcilik.herokuapp.com/reklam/findById/" + url, {
   method: "GET",
   "Access-Control-Allow-Origin": "*",
 })

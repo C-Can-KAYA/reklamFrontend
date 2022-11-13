@@ -1,4 +1,4 @@
-fetch('http://localhost:8080/minibus/findAll').then(response => response.json())
+fetch('https://reklamcilik.herokuapp.com/minibus/findAll').then(response => response.json())
     .then(result => {
         var table = document.getElementById("minibus");
         for (var i = 0; result.length > i; i++) {
@@ -21,7 +21,7 @@ fetch('http://localhost:8080/minibus/findAll').then(response => response.json())
     );
     function deleteMinibus(id) {
       fetch(
-        "http://localhost:8080/minibus/deleteById/" +id,
+        "https://reklamcilik.herokuapp.com/minibus/deleteById/" +id,
         {
           method: "POST",
         }

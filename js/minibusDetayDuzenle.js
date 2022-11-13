@@ -1,4 +1,4 @@
-fetch("http://localhost:8080/reklam/findAll")
+fetch("https://reklamcilik.herokuapp.com/reklam/findAll")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("reklam");
@@ -10,7 +10,7 @@ fetch("http://localhost:8080/reklam/findAll")
     }
   });
 
-fetch("http://localhost:8080/sofor/findAll")
+fetch("https://reklamcilik.herokuapp.com/sofor/findAll")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("sofor");
@@ -23,7 +23,7 @@ fetch("http://localhost:8080/sofor/findAll")
     }
   });
 
-fetch("http://localhost:8080/minibus/findAll/il")
+fetch("https://reklamcilik.herokuapp.com/minibus/findAll/il")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("il");
@@ -43,7 +43,7 @@ function hatList() {
   while (hatChild.hasChildNodes()) {
     hatChild.removeChild(hatChild.firstChild);
   }
-  fetch("http://localhost:8080/minibus/hatList/" + "ISTANBUL", {
+  fetch("https://reklamcilik.herokuapp.com/minibus/hatList/" + "ISTANBUL", {
     method: "POST",
   })
     .then((response) => response.json())
@@ -58,7 +58,7 @@ function hatList() {
 }
 
 let url = new URL(window.location.href).searchParams.get("id");
-fetch("http://localhost:8080/minibus/findById/" + url, {
+fetch("https://reklamcilik.herokuapp.com/minibus/findById/" + url, {
   method: "GET",
   "Access-Control-Allow-Origin": "*",
 })
@@ -126,7 +126,7 @@ fetch("http://localhost:8080/minibus/findById/" + url, {
       sofor: soforSelect,
     };
     console.log(minibusItem)
-    fetch("http://localhost:8080/minibus/update", {
+    fetch("https://reklamcilik.herokuapp.com/minibus/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

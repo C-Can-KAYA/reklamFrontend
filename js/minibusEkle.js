@@ -1,4 +1,4 @@
-fetch("http://localhost:8080/sofor/findAll")
+fetch("https://reklamcilik.herokuapp.com/sofor/findAll")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("sofor");
@@ -11,7 +11,7 @@ fetch("http://localhost:8080/sofor/findAll")
     }
   });
 
-fetch("http://localhost:8080/minibus/findAll/il")
+fetch("https://reklamcilik.herokuapp.com/minibus/findAll/il")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("il");
@@ -29,7 +29,7 @@ function hatList() {
   while (hatChild.hasChildNodes()) {
     hatChild.removeChild(hatChild.firstChild);
   }
-  fetch("http://localhost:8080/minibus/hatList/" + hat, { method: "POST" })
+  fetch("https://reklamcilik.herokuapp.com/minibus/hatList/" + hat, { method: "POST" })
     .then((response) => response.json())
     .then((result) => {
       var select = document.getElementById("hat");
@@ -41,7 +41,7 @@ function hatList() {
     });
 }
 
-fetch("http://localhost:8080/reklam/findAll")
+fetch("https://reklamcilik.herokuapp.com/reklam/findAll")
   .then((response) => response.json())
   .then((result) => {
     var select = document.getElementById("reklam");
@@ -72,7 +72,7 @@ function postMinibus() {
     reklam: reklamList,
     sofor: soforSelect,
   };
-  fetch("http://localhost:8080/minibus/insert", {
+  fetch("https://reklamcilik.herokuapp.com/minibus/insert", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
