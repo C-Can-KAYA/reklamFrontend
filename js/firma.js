@@ -14,7 +14,6 @@ fetch('https://reklamcilik.herokuapp.com/firma/findById/'+url,
 fetch("https://reklamcilik.herokuapp.com/firma/findAll")
   .then((response) => response.json())
   .then((result) => {
-    console.log(result)
     var table = document.getElementById("firma");
     for (var i = 0; result.length > i; i++) {
       var row = table.insertRow(1);

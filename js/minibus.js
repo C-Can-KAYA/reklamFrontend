@@ -2,7 +2,6 @@ fetch('https://reklamcilik.herokuapp.com/minibus/findAll').then(response => resp
     .then(result => {
         var table = document.getElementById("minibus");
         for (var i = 0; result.length > i; i++) {
-          console.log(result);
           var row = table.insertRow(1);
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);

@@ -125,7 +125,6 @@ fetch("https://reklamcilik.herokuapp.com/minibus/findById/" + url, {
       reklam: reklamList,
       sofor: soforSelect,
     };
-    console.log(minibusItem)
     fetch("https://reklamcilik.herokuapp.com/minibus/update", {
       method: "POST",
       headers: {

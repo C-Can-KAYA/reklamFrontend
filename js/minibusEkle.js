@@ -1,10 +1,11 @@
 fetch("https://reklamcilik.herokuapp.com/sofor/findAll")
   .then((response) => response.json())
   .then((result) => {
+
     var select = document.getElementById("sofor");
     for (var i = 0; result.length > i; i++) {
       var opt = document.createElement("option");
-      opt.value = result[i].soforId;
+      opt.value = result[i].id;
       opt.innerHTML =
         result[i].ad + " " + result[i].soyad + " (" + result[i].tckn + ")";
       select.appendChild(opt);
