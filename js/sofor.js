@@ -12,7 +12,7 @@ fetch('https://reklamcilik.herokuapp.com/sofor/findAll').then(response => respon
           cell2.innerHTML = result[i].ad;
           cell3.innerHTML = result[i].soyad;
           cell4.innerHTML = result[i].tel;
-          cell5.innerHTML = "<a class='btn btn-sm btn-info' href='soforDuzenle.html?id="+result[i].soforId+"'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteMinibus("+result[i].soforId+")' href='#'>Sil</a>";
+          cell5.innerHTML = "<a class='btn btn-sm btn-info' href='soforDuzenle.html?id="+result[i].id+"'>Düzenle</a><a class='btn btn-sm btn-primary' onclick='deleteMinibus("+result[i].id+")' href='#'>Sil</a>";
         } 
     }
     );
