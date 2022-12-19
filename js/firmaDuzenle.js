@@ -1,5 +1,5 @@
 let url = new URL(window.location.href).searchParams.get("id");
-fetch('https://reklamcilik.herokuapp.com/firma/findById/'+url,
+fetch('http://localhost:8080/firma/findById/'+url,
 {
   method: "POST",
   "Access-Control-Allow-Origin": "*",
@@ -32,7 +32,7 @@ fetch('https://reklamcilik.herokuapp.com/firma/findById/'+url,
             }
             
         };
-        fetch("https://reklamcilik.herokuapp.com/firma/updateFirma", {
+        fetch("http://localhost:8080/firma/updateFirma", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

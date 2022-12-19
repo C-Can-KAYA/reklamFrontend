@@ -1,5 +1,5 @@
 let url = new URL(window.location.href).searchParams.get("id");
-fetch('https://reklamcilik.herokuapp.com/firma/findById/'+url,
+fetch('http://localhost:8080/firma/findById/'+url,
 {
   method: "POST",
   "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,10 @@ fetch('https://reklamcilik.herokuapp.com/firma/findById/'+url,
       document.getElementById("sicil").innerHTML=result.sicilNo;
       }
     );
-fetch("https://reklamcilik.herokuapp.com/firma/findAll")
+fetch("http://localhost:8080/firma/findAll",
+{
+  "Access-Control-Allow-Origin": "*"
+})
   .then((response) => response.json())
   .then((result) => {
     var table = document.getElementById("firma");
@@ -35,7 +38,7 @@ fetch("https://reklamcilik.herokuapp.com/firma/findAll")
   });
 
 function deleteFirma(id) {
-  fetch("https://reklamcilik.herokuapp.com/firma/deleteById/" + id, {
+  fetch("http://localhost:8080/firma/deleteById/" + id, {
     method: "POST",
   })
     .then(() => {
@@ -60,10 +63,11 @@ function postFirma() {
     },
     sicilNo: sicilNo,
   };
-  fetch("https://reklamcilik.herokuapp.com/firma/insert", {
+  fetch("http://localhost:8080/firma/insert", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
     },
     body: JSON.stringify(firmaItem),
   }).then((response) => {

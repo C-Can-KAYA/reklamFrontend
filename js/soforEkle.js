@@ -10,7 +10,7 @@ function postSofor() {
         tckn: tckn,
         tel: telefon
     };
-    fetch("https://reklamcilik.herokuapp.com/sofor/insert", {
+    fetch("http://localhost:8080/sofor/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

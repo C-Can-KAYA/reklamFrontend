@@ -1,4 +1,4 @@
-fetch('https://reklamcilik.herokuapp.com/sofor/findAll').then(response => response.json())
+fetch('http://localhost:8080/sofor/findAll').then(response => response.json())
     .then(result => {
         var table = document.getElementById("sofor");
         for (var i = 0; result.length > i; i++) {
@@ -18,7 +18,7 @@ fetch('https://reklamcilik.herokuapp.com/sofor/findAll').then(response => respon
     );
     function deleteMinibus(id) {
       fetch(
-        "https://reklamcilik.herokuapp.com/sofor/deleteById/" +id,
+        "http://localhost:8080/sofor/deleteById/" +id,
         {
           method: "POST",
         }
